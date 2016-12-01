@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-file-saver",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Provides file saving capability to an Ember CLI application.",
   "directories": {
     "doc": "doc",
