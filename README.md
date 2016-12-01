@@ -1,6 +1,18 @@
 # Ember-cli-file-saver
 
-This README outlines the details of collaborating on this Ember addon.
+Include [https://github.com/eligrey/FileSaver.js](FileSaver) in an ember-cli app.
+
+When the addon is installed, it will add FileSaver as a bower dependency.
+
+## Usage
+
+### ES6 Import
+
+This addon provides the ability to import FileSaver as an ES6 module.
+
+```js
+import FileSaver from 'file-saver';
+```
 
 ## Installation
 

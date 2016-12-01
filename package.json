@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-file-saver",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "FileSaver for Ember.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -41,7 +41,10 @@
     "loader.js": "^4.0.10"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "FileSaver",
+    "save",
+    "file"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.7"
