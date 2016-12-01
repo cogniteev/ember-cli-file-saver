@@ -6,7 +6,7 @@ module.exports = {
 
   included(app) {
     this._super.included(app);
-    app.import(app.bowerDirectory + '/file-saver/FileSaver.js', {
+    app.import(app.bowerDirectory + '/FileSaver/FileSaver.js', {
       type: 'vendor'
     });
     app.import('vendor/file-saver.shim.js', {
