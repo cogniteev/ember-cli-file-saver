@@ -1,12 +1,13 @@
 # Ember-cli-file-saver
 
-Include [https://github.com/eligrey/FileSaver.js](FileSaver) in an ember-cli app.
+Provides support to save binary file from an API for an Ember CLI application.
 
-When the addon is installed, it will add FileSaver as a bower dependency and register a new transport
-layer for jQuery in order to receive ArrayBuffers and Blobs.
+Upon install it will:
+ - add a bower dependency to [FileSaver](https://github.com/eligrey/FileSaver.js])
+ - add a transport layer for jQuery to handle arraybuffer and blob dataType.
 
-To make this transport layer works using ember-data you need to add the `adapter-arraybuffer-mixin` mixin to your
-adapter.
+To make this new transport layer works nicely with `ember-data` it is necessary to make your adapter extend the
+`adapter-arraybuffer-mixin` mixin and pass either `arraybuffer:true` or `blob:true` as an AJAX option.
 
 ## Usage
 
@@ -54,7 +55,7 @@ export default Component.extend(FileSaverMixin, {
 
 ### Using from a model
 
-This works well with the [https://github.com/mike-north/ember-api-actions](ember-api-actions) project:
+This works well with the [ember-api-actions](https://github.com/mike-north/ember-api-actions) project:
 
 ```js
 // models/invoice.js
