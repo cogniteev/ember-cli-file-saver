@@ -14,12 +14,14 @@ export default Ember.Mixin.create({
    */
   ajaxOptions(url, type, options) {
     const opts = this._super(url, type, options);
-    if (options.arraybuffer) {
-      opts.dataType = 'arraybuffer';
-      opts.processData = false;
-    } else if (options.blob) {
-      opts.dataType = 'blob';
-      opts.processData = false;
+    if (options) {
+      if (options.arraybuffer) {
+        opts.dataType = 'arraybuffer';
+        opts.processData = false;
+      } else if (options.blob) {
+        opts.dataType = 'blob';
+        opts.processData = false;
+      }
     }
     return opts;
   }
