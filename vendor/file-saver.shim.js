@@ -3,5 +3,5 @@
 'use strict';
 
 define('file-saver', [], function() {
-  return { 'default': saveAs };
+  return { 'default': { saveAs: saveAs } };
 });
