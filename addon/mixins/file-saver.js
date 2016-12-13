@@ -3,10 +3,6 @@ import FileSaver from 'file-saver';
 
 export default Ember.Mixin.create({
 
-  saveFile(content, contentType) {
-    FileSaver.saveAs(this.toBlob(content, contentType));
-  },
-
   saveCanvasAs(filename, canvas) {
     canvas.toBlob((blob) => this.saveAs(blob, filename));
   },
