@@ -3,7 +3,7 @@
 Provides support to save binary file from an API for an Ember CLI application.
 
 Upon install it will:
- - add a bower dependency to [FileSaver](https://github.com/eligrey/FileSaver.js])
+ - add a bower dependency to [FileSaver](https://github.com/eligrey/FileSaver.js)
  - add a transport layer for jQuery to handle arraybuffer and blob dataType.
 
 To make this new transport layer works nicely with `ember-data` it is necessary to make your adapter extend the
