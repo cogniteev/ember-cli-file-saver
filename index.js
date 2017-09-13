@@ -1,25 +1,38 @@
-/* jshint node: true */
+/* eslint-env node */
 'use strict';
+
+var path = require('path');
+var Funnel = require('broccoli-funnel');
+var MergeTrees = require('broccoli-merge-trees');
+
 
 module.exports = {
   name: 'ember-cli-file-saver',
 
-  included(app) {
-    this._super.included(app);
+  included() {
+    this._super.included.apply(this, arguments);
 
-    app.import(app.bowerDirectory + '/FileSaver/FileSaver.js', {
+    this.import('vendor/FileSaver.js', {
       type: 'vendor'
     });
 
-    app.import('vendor/jquery-ajax-arraybuffer.js', {
+    this.import('vendor/jquery-ajax-arraybuffer.js', {
       type: 'vendor'
     });
 
-    app.import('vendor/file-saver.shim.js', {
+    this.import('vendor/file-saver.shim.js', {
       type: 'vendor',
       exports: {
         rison: ['default']
       }
     });
-  }
+  },
+
+  treeForVendor(vendorTree) {
+    var fileSaverTree = new Funnel(path.join(this.project.root, 'node_modules', 'file-saver'), {
+      files: ['FileSaver.js']
+    });
+
+    return new MergeTrees([vendorTree, fileSaverTree]);
+  },
 };
