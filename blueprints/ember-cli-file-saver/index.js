@@ -6,6 +6,6 @@ module.exports = {
   },
 
   afterInstall: function () {
-    return this.addBowerPackageToProject('FileSaver', '^1.3.3');
+    return this.addPackageToProject('file-saver', '^1.3.3');
   }
 };
