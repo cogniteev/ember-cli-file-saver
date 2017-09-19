@@ -47,7 +47,7 @@ export default Component.extend(FileSaverMixin, {
   tagName: 'button',
 
   click() {
-    this.attrs.download()
+    this.get('download')()
       .then((content) => this.saveFileAs(this.get('filename'), content, this.get('contentType')));
   }
 });
