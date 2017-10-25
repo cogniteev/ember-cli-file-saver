@@ -2,12 +2,22 @@
 
 Provides support to save binary file from an API for an Ember CLI application.
 
-Upon install it will:
- - add an NPM dependency to [FileSaver](https://github.com/eligrey/FileSaver.js)
- - add a transport layer for jQuery to handle arraybuffer and blob dataType.
+## Installation
 
-To make this new transport layer works nicely with `ember-data` it is necessary to make your adapter extend the
-`adapter-arraybuffer-mixin` mixin and pass either `arraybuffer:true` or `blob:true` as an AJAX option.
+Install the ember-cli addon in your ember-cli project:
+
+```bash
+$ ember install ember-cli-file-saver
+```
+
+This should also automatically:
+- add an NPM dependency to [FileSaver](https://github.com/eligrey/FileSaver.js).
+- add a transport layer for jQuery to handle arraybuffer and blob dataType.
+
+**Note** that to make this new transport layer works nicely with `ember-data` it is necessary to make your adapter extend the
+`adapter-arraybuffer-mixin` mixin and pass either `arraybuffer:true` or `blob:true` as an AJAX option, otherwise `ember-data` will
+try to interpret the response as JSON.
+
 
 ## Usage
 
