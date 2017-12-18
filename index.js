@@ -4,6 +4,7 @@
 var path = require('path');
 var Funnel = require('broccoli-funnel');
 var MergeTrees = require('broccoli-merge-trees');
+var map = require('broccoli-stew').map;
 
 
 module.exports = {
@@ -32,6 +33,8 @@ module.exports = {
     var fileSaverTree = new Funnel(path.join(this.project.root, 'node_modules', 'file-saver'), {
       files: ['FileSaver.js']
     });
+
+    fileSaverTree = map(fileSaverTree, (content) => `if (typeof FastBoot === 'undefined') { ${content} }`);
 
     return new MergeTrees([vendorTree, fileSaverTree]);
   },
