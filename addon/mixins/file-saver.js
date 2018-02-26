@@ -8,11 +8,11 @@ export default Ember.Mixin.create({
   },
 
   saveTextAs(filename, text) {
-    this.saveAs(new Blob([ text ], { type: 'text/plain;charset=utf-8' }), filename);
+    this.saveFileAs(filename, text, 'text/plain;charset=utf-8');
   },
 
   saveFileAs(filename, content, contentType) {
-    this.saveAs(new File([ content], filename, { type: contentType }));
+    this.saveAs(new Blob([ content ], { type: contentType }), filename);
   },
 
   saveAs() {
