@@ -30,12 +30,20 @@ module.exports = {
   },
 
   treeForVendor(vendorTree) {
-    var fileSaverTree = new Funnel(path.join(this.project.root, 'node_modules', 'file-saver'), {
+    var trees = [];
+    var fileSaverPath = path.dirname(require.resolve('file-saver'));
+    var fileSaverTree = new Funnel(fileSaverPath, {
       files: ['FileSaver.js']
     });
 
     fileSaverTree = map(fileSaverTree, (content) => `if (typeof FastBoot === 'undefined') { ${content} }`);
 
-    return new MergeTrees([vendorTree, fileSaverTree]);
+    if (vendorTree !== undefined) {
+      trees.push(vendorTree);
+    }
+
+    trees.push(fileSaverTree);
+
+    return new MergeTrees(trees);
   },
 };
