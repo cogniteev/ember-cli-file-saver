@@ -57,8 +57,7 @@ export default Component.extend(FileSaverMixin, {
   tagName: 'button',
 
   click() {
-    this.get('ajax').request({
-      url: this.get('downloadUrl'),
+    this.get('ajax').request(this.get('downloadUrl'), {
       method: 'GET',
       dataType: 'arraybuffer', // or 'blob'
       processData: false
