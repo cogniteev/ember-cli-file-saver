@@ -56,6 +56,10 @@ export default Component.extend(FileSaverMixin, {
 
   tagName: 'button',
 
+  downloadUrl: computed(function() {
+    return 'http://hostname/download.php?id=42';  
+  }),
+
   contentType: 'application/json',
   
   filename: 'invoice.pdf',
