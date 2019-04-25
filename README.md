@@ -56,6 +56,10 @@ export default Component.extend(FileSaverMixin, {
 
   tagName: 'button',
 
+  contentType: 'application/json',
+  
+  filename: 'invoice.pdf',
+  
   click() {
     this.get('ajax').request(this.get('downloadUrl'), {
       method: 'GET',
